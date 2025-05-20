@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tailwaggers - Adopt Your Best Friend</title>
+  <link href="output.css" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    html {
+      overflow-x: hidden;
+    }
+
+    body {
+      background-color: #FFE6B2;
+      color: #333;
+      line-height: 1.6;
+      overflow: hidden;
+    }
+
+    header {
+      background-color: #fcf9f3;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    header .logo {
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: #98690C;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav ul li {
+      position: relative;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #98690C;
+    }
+
+    nav ul li a:hover {
+      font-weight: bold; /* Makes text bold on hover */
+    }
+
+    nav ul li:hover > ul {
+      display: block;
+      
+    }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #fff;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .dropdown li a {
+      display: block;
+      padding: 0.5rem 1rem;
+      white-space: nowrap;
+    }
+
+    .auth-button {
+      background-color: #8b5e3c;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+      padding: 3rem 1rem;
+      max-width: 100%;
+      box-sizing: border-box;
+      background-color: #FFE6B2;
+    }
+
+    .hero-text h1 {
+      font-size: 2.5rem;
+      color: #818B51;
+    }
+
+    .hero-text button {
+      background-color: #8b5e3c;
+      color: white;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 20px;
+      margin-top: 1rem;
+      margin-left: 7rem;
+      cursor: pointer;
+    }
+
+    .available-section {
+      padding: 2rem;
+      text-align: center;
+      background-color: #FFE6B2;
+    }
+
+    .available-section h2 {
+      margin-bottom: 2rem;
+      color: #818B51;
+    }
+
+    .pet-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      width: 220px;
+      height: 280px;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      border-radius: 8px;
+    }
+    .card h3 {
+      margin: 0.5rem 0 0.2rem;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .explore-button {
+      margin-top: 2rem;
+      background-color: #8b5e3c;
+      color: white;
+      padding: 0.6rem 1.5rem;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    .custom-footer {
+      background-color: #FCF9F3;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #333;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      gap: 2rem;
+    }
+    .footer-section {
+      flex: 1;
+      min-width: 220px;
+    }
+
+    .footer-left p {
+      margin: 0.3rem 0;
+      text-align: left;
+    }
+
+    .footer-left a {
+      color: #333;
+      text-decoration: none;
+    }
+
+    .footer-left a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-center {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: #98690C;
+      font-size: 1.2rem;
+      font-weight: bold;
+      
+    }
+
+    .footer-logo {
+      width: 35px;
+      height: 35px;
+    }
+
+    .footer-right a {
+      margin: 0 6px;
+      display: inline-block;
+    }
+
+    .footer-right img {
+      width: 20px;
+      height: 20px;
+    }
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">🐾 Tailwaggers</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="volunteer.html">Volunteer</a></li>
+        <li>
+          <a href="dog.html">Adopt</a>
+          <ul class="dropdown">
+            <li><a href="dog.html">Dogs</a></li>
+            <li><a href="#">Cats</a></li>
+          </ul>
+        </li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+    <button class="auth-button">Login/Sign Up</button>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Adopt Your New<br />Best Friend Now!</h1>
+      <button>Adopt</button>
+    </div>
+    <div class="hero-image">
+      <img src="src/image/corgii.png" alt="Happy dog" width="250" />
+    </div>
+  </section>
+  <hr style="width: 900px; border: 1px solid black; margin: 0 auto; ">
+
+  <section class="available-section">
+    <h2>Recently Available Pets in Need of New Home</h2>
+    <div class="pet-cards">
+      <div class="card">
+        <img src="src/image/leo.jpeg" alt="Leo">
+        <h3>Leo</h3>
+        <p>8 months • Male</p>
+      </div>
+      <div class="card">
+        <img src="src/image/paw.jpeg" alt="Paw">
+        <h3>Paw</h3>
+        <p>9 months • Male</p>
+      </div>
+      <div class="card">
+        <img src="src/image/lilyy.png" alt="Lily">
+        <h3>Lily</h3>
+        <p>1 year • Female</p>
+      </div>
+      <div class="card">
+        <img src="src/image/lucas.jpg" alt="Lucas">
+        <h3>Lucas</h3>
+        <p>3 years • Male</p>
+      </div>
+    </div>
+    <button class="explore-button">🔍 Explore All</button>
+  </section>
+
+
+ 
+  <footer class="custom-footer">
+    <div class="footer-container">
+      
+      <!-- Left: Contact Info -->
+      <div class="footer-section footer-left">
+        <p>5/10 Moo 7 Lak Hok, Pathum Thani, Bangkok</p>
+        <p>info@pawsitively.com</p>
+        <p>&copy; 2024 Brand, Inc. • 
+          <a href="#">Privacy</a> • 
+          <a href="#">Terms</a> • 
+          <a href="#">Sitemap</a>
+        </p>
+      </div>
+  
+      <!-- Center: Logo & Brand -->
+      <div class="footer-section footer-center">
+        <span class="footer-brand">🐾 Tailwaggers</span>
+      </div>
+  
+      <!-- Right: Social Icons -->
+      <div class="footer-section footer-right">
+        <a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/twitter/twitter-original.svg" alt="Twitter"></a>
+        <a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg" alt="Facebook"></a>
+        <a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn"></a>
+        <a href="#"><img src="src/image/instagram.png" alt="Instagram"></a>
+      </div>
+    </div>
+  </footer>
+  
+</html>
