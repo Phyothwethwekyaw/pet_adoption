@@ -1,328 +1,246 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tailwaggers - Adopt Your Best Friend</title>
-  <link href="output.css" rel="stylesheet">
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    html {
-      overflow-x: hidden;
-    }
-
-    body {
-      background-color: #FFE6B2;
-      color: #333;
-      line-height: 1.6;
-      overflow: hidden;
-    }
-
-    header {
-      background-color: #fcf9f3;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-
-    header .logo {
-      display: flex;
-      align-items: center;
-      font-weight: bold;
-      font-size: 1.5rem;
-      color: #98690C;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    nav ul li {
-      position: relative;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      color: #98690C;
-    }
-
-    nav ul li a:hover {
-      font-weight: bold; /* Makes text bold on hover */
-    }
-
-    nav ul li:hover > ul {
-      display: block;
-      
-    }
-
-    .dropdown {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background: #fff;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
-
-    .dropdown li a {
-      display: block;
-      padding: 0.5rem 1rem;
-      white-space: nowrap;
-    }
-
-    .auth-button {
-      background-color: #8b5e3c;
-      color: white;
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      cursor: pointer;
-    }
-
-    .hero {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      align-items: center;
-      padding: 3rem 1rem;
-      max-width: 100%;
-      box-sizing: border-box;
-      background-color: #FFE6B2;
-    }
-
-    .hero-text h1 {
-      font-size: 2.5rem;
-      color: #818B51;
-    }
-
-    .hero-text button {
-      background-color: #8b5e3c;
-      color: white;
-      border: none;
-      padding: 0.7rem 1.5rem;
-      font-size: 1rem;
-      border-radius: 20px;
-      margin-top: 1rem;
-      margin-left: 7rem;
-      cursor: pointer;
-    }
-
-    .available-section {
-      padding: 2rem;
-      text-align: center;
-      background-color: #FFE6B2;
-    }
-
-    .available-section h2 {
-      margin-bottom: 2rem;
-      color: #818B51;
-    }
-
-    .pet-cards {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-    }
-
-    .card {
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      width: 220px;
-      height: 280px;
-      padding: 1rem;
-      text-align: center;
-    }
-
-    .card img {
-      width: 100%;
-      height: 180px;
-      border-radius: 8px;
-    }
-    .card h3 {
-      margin: 0.5rem 0 0.2rem;
-    }
-
-    .card p {
-      font-size: 0.9rem;
-      color: #666;
-    }
-
-    .explore-button {
-      margin-top: 2rem;
-      background-color: #8b5e3c;
-      color: white;
-      padding: 0.6rem 1.5rem;
-      border: none;
-      border-radius: 20px;
-      cursor: pointer;
-    }
-
-    .custom-footer {
-      background-color: #FCF9F3;
-      padding: 2rem;
-      font-size: 0.9rem;
-      color: #333;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    }
-
-    .footer-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      text-align: center;
-      gap: 2rem;
-    }
-    .footer-section {
-      flex: 1;
-      min-width: 220px;
-    }
-
-    .footer-left p {
-      margin: 0.3rem 0;
-      text-align: left;
-    }
-
-    .footer-left a {
-      color: #333;
-      text-decoration: none;
-    }
-
-    .footer-left a:hover {
-      text-decoration: underline;
-    }
-
-    .footer-center {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      color: #98690C;
-      font-size: 1.2rem;
-      font-weight: bold;
-      
-    }
-
-    .footer-logo {
-      width: 35px;
-      height: 35px;
-    }
-
-    .footer-right a {
-      margin: 0 6px;
-      display: inline-block;
-    }
-
-    .footer-right img {
-      width: 20px;
-      height: 20px;
-    }
-
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Available</title>
+    <link href="output.css" rel="stylesheet">
+    
 </head>
-<body>
-  <header>
-    <div class="logo">🐾 Tailwaggers</div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="volunteer.html">Volunteer</a></li>
-        <li>
-          <a href="dog.html">Adopt</a>
-          <ul class="dropdown">
-            <li><a href="dog.html">Dogs</a></li>
-            <li><a href="#">Cats</a></li>
-          </ul>
-        </li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-      </ul>
+<body class="bg-[#FFE6B2] pt-24">
+    <nav class="bg-[#fcf9f3] dark:bg-[hsl(40,60%,97%)] fixed w-full z-20 top-0 start-0 border-b border-[#fcf9f3] dark:border-[#fcf9f3]">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between p-4 mx-auto">
+            <div class="flex items-center gap-2">
+                <img src="src/image/logo.png" alt="logo" class="w-10 h-10" />
+                <span class="self-center text-[#98690C] text-3xl font-semibold whitespace-nowrap ml-0">Tailwaggers</span>
+            </div>
+            <div class="text-[#98690C] flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse"> 
+                <button type="button" class="text-white bg-[#98690C] hover:bg-[#98690C] focus:ring-4 focus:outline-none focus:ring-[#98690C] font-medium rounded-lg text-sm px-5 py-2.5 text-center hover:font-bold"><a href="signup.html">SignUp</a></button>
+                <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+                <ul class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-[#fcf9f3] md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-[#fcf9f3] dark:bg-[#fcf9f3] dark:border-[#fcf9f3]">
+                    <li>
+                        <a href="index.html" class="block py-2 pl-3 pr-4 text-[#98690C] rounded hover:text-[#98690C] hover:font-bold md:hover:bg-transparent md:hover:text-[#98690C] md:p-0 dark:text-[#98690C] dark:hover:bg-[#fcf9f3] dark:hover:text-[#98690C]" >Home</a>
+                    </li>
+                    <li>
+                        <a href="volunteer.html" class="block py-2 pl-3 pr-4 text-[#98690C] rounded hover:text-[#98690C] hover:font-bold md:hover:bg-transparent md:hover:text-[#98690C] md:p-0 dark:text-[#98690C] dark:hover:bg-[#fcf9f3] dark:hover:text-[#98690C]">Volunteer</a>
+                    </li>
+                    <li class="relative group">
+                        <button id="adoptDropdownBtn" class="flex items-center w-full py-2 px-3 text-[#98690C] rounded hover:font-bold md:hover:bg-transparent md:hover:text-[#98690C] md:p-0 dark:text-[#98690C] dark:hover:bg-[#fcf9f3] dark:hover:text-[#98690C]">
+                            <a href="#">Adopt</a>
+                            <svg class="w-3 h-3 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
+                            </svg>
+                        </button>
+                        <ul id="adoptDropdownMenu" class="absolute z-10 hidden group-hover:block bg-[#fcf9f3] text-[#98690C] rounded-lg shadow-md w-40">
+                            <li><a href="dog.html" class="block px-4 py-2 hover:bg-[#f3eee3] hover:font-bold">Dogs</a></li>
+                            <li><a href="cat.html" class="block px-4 py-2 hover:bg-[#f3eee3] hover:font-bold">Cats</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="contact.html" class="block py-2 pl-3 pr-4 text-[#98690C] rounded hover:text-[#98690C] hover:font-bold md:hover:bg-transparent md:hover:text-[#98690C] md:p-0 dark:text-[#98690C] dark:hover:bg-[#fcf9f3] dark:hover:text-[#98690C]">Contact Us</a>
+                    </li>
+                    <li>
+                        <a href="about.html" class="block py-2 pl-3 pr-4 text-[#98690C] rounded hover:text-[#98690C] hover:font-bold md:hover:bg-transparent md:hover:text-[#98690C] md:p-0 dark:text-[#98690C] dark:hover:bg-[#fcf9f3] dark:hover:text-[#98690C]">About Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
-    <button class="auth-button">Login/Sign Up</button>
-  </header>
 
-  <section class="hero">
-    <div class="hero-text">
-      <h1>Adopt Your New<br />Best Friend Now!</h1>
-      <button>Adopt</button>
+    <section class="hero flex flex-col md:flex-row justify-around items-center py-12 px-4 bg-[#FFE6B2]  ">
+  <div class="hero-text flex flex-col items-center md:items-start">
+    <h1 class="text-6xl md:text-6xl font-bold text-[#818B51] mb-6 text-center md:text-left">
+      Adopt Your New<br />Best Friend Now!
+    </h1>
+    <div class="flex justify-center md:justify-start w-full ml-35">
+      <button class="bg-[#8b5e3c] text-white px-6 py-3 rounded-full mt-4 hover:bg-[#98690C] transition shadow-lg">
+        <a href="dog.html">Adopt Now</a>
+      </button>
     </div>
-    <div class="hero-image">
-      <img src="src/image/corgii.png" alt="Happy dog" width="250" />
+  </div>
+  <div class="hero-image flex flex-row justify-center items-center w-auto gap-4">
+    <div class="rounded-full bg-white w-10 h-10 mb-20 ml-20"></div>
+    <img src="src/image/cathome.png" alt="Happy cat" class="rounded-full bg-blue-400 w-40 h-40 object-cover mt-45" />
+    <div class="rounded-full bg-blue-400 w-10 h-10 mb-70 mr-10"></div>
+    <img src="src/image/corgi.png" alt="Happy dog" class="rounded-full bg-red-400 w-80 h-80 object-cover mt-10"/>
+    
+    
+  </div>
+</section>
+
+    <hr class="w-[900px] border border-black mx-auto my-0" />
+
+    <section class="available-section py-8 px-4 text-center bg-[#FFE6B2]">
+      <h2 class="text-2xl md:text-3xl font-semibold text-[#818B51] mb-8">Recently Available Pets in Need of New Home</h2>
+        
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 px-10 ml-10 py-7">
+          <!-- Dog Card 1 -->
+          <a href="adopt.html" class="block group">
+            <div class="relative flex flex-col bg-white backdrop-blur-md rounded-2xl shadow-lg p-10 max-w-[270px] min-h-[280px] cursor-pointer transition-transform hover:scale-105">
+              <button class="absolute top-4 right-4 group-hover:text-red-400">
+                <svg class="w-7 h-7 text-gray-300 transition-colors" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/>
+                </svg>
+              </button>
+              <img src="src/image/lucas.jpg" alt="Leo" class="w-32 h-32 object-cover rounded-xl border-4 border-white shadow-lg mx-auto mb-4" />
+              <div class="flex-1 flex flex-col items-center text-center gap-1">
+                <div class="flex items-center justify-center mb-1">
+                  <h3 class="text-2xl font-bold text-[#98690C]">Lucas</h3>
+                  <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <circle cx="10" cy="14" r="5" />
+                  <path d="M19 5h-5m5 0v5m0-5-7 7" />
+                  </svg>
+                </div>
+                <p class="text-[#818B51] text-base mb-1">Golden Retriever • 4 years</p>
+              </div>
+            </div>
+          </a>
+          <!-- Dog Card 2 -->
+          <a href="adopt.html" class="block group">
+            <div class="relative flex flex-col bg-white backdrop-blur-md rounded-2xl shadow-lg p-4 max-w-[270px] min-h-[280px] cursor-pointer transition-transform hover:scale-105">
+              <button class="absolute top-4 right-4 group-hover:text-red-400">
+                <svg class="w-7 h-7 text-gray-300 transition-colors" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/>
+                </svg>
+              </button>
+              <img src="src/image/lucas.jpg" alt="Leo" class="w-32 h-32 object-cover rounded-xl border-4 border-white shadow-lg mx-auto mb-4" />
+              <div class="flex-1 flex flex-col items-center text-center gap-1">
+                <div class="flex items-center justify-center mb-1">
+                  <h3 class="text-2xl font-bold text-[#98690C]">Lucas</h3>
+                  <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <circle cx="10" cy="14" r="5" />
+                  <path d="M19 5h-5m5 0v5m0-5-7 7" />
+                  </svg>
+                </div>
+                <p class="text-[#818B51] text-base mb-1">Golden Retriever • 4 years</p>
+      <div class="flex items-center justify-center gap-5 mb-1">
+        <span class="text-[#98690C] px-5 py-2 underline group-hover:text-[#8b5e3c] transition mt-auto">More Details</span>
+      </div>
     </div>
-  </section>
-  <hr style="width: 900px; border: 1px solid black; margin: 0 auto; ">
-
-  <section class="available-section">
-    <h2>Recently Available Pets in Need of New Home</h2>
-    <div class="pet-cards">
-      <div class="card">
-        <img src="src/image/leo.jpeg" alt="Leo">
-        <h3>Leo</h3>
-        <p>8 months • Male</p>
-      </div>
-      <div class="card">
-        <img src="src/image/paw.jpeg" alt="Paw">
-        <h3>Paw</h3>
-        <p>9 months • Male</p>
-      </div>
-      <div class="card">
-        <img src="src/image/lilyy.png" alt="Lily">
-        <h3>Lily</h3>
-        <p>1 year • Female</p>
-      </div>
-      <div class="card">
-        <img src="src/image/lucas.jpg" alt="Lucas">
-        <h3>Lucas</h3>
-        <p>3 years • Male</p>
-      </div>
-    </div>
-    <button class="explore-button">🔍 Explore All</button>
-  </section>
-
-
- 
-  <footer class="custom-footer">
-    <div class="footer-container">
+  </div>
+</a>
+          <!-- Dog Card 3 -->
+          <div class="relative flex flex-col bg-white backdrop-blur-md rounded-2xl shadow-lg p-4 max-w-[270px] min-h-[280px]">
+            <button class="absolute top-4 right-4 group">
+              <svg class="w-7 h-7 text-gray-300 group-hover:text-red-400 transition-colors" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/>
+              </svg>
+            </button>
+            <img src="src/image/lucas.jpg" alt="Leo" class="w-32 h-32 object-cover rounded-xl border-4 border-white shadow-lg mx-auto mb-4" />
+            <div class="flex-1 flex flex-col items-center text-center">
+              <div class="flex items-center justify-center gap-2 mb-1">
+                  <h3 class="text-2xl font-bold text-[#98690C]">Lucas</h3>
+                  <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <circle cx="10" cy="14" r="5" />
+                      <path d="M19 5h-5m5 0v5m0-5-7 7" />
+                  </svg>
+              </div>
+              <p class="text-[#818B51] text-base mb-1">Golden Retriever • 4 years</p>
+              <div class="flex items-center justify-center gap-5 mb-1">
+                  <button class="bg-[#98690C] text-white px-5 py-2 rounded-full hover:bg-[#8b5e3c] transition mt-auto "><a href="adopt.html">More Details</a></button>
+              </div>
+            </div>
+          </div>
+          <!-- Dog Card 4 -->
+          <div class="relative flex flex-col bg-white backdrop-blur-md rounded-2xl shadow-lg p-4 max-w-[270px] min-h-[280px]">
+            <button class="absolute top-4 right-4 group">
+              <svg class="w-7 h-7 text-gray-300 group-hover:text-red-400 transition-colors" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/>
+              </svg>
+            </button>
+            <img src="src/image/lucas.jpg" alt="Leo" class="w-32 h-32 object-cover rounded-xl border-4 border-white shadow-lg mx-auto mb-4" />
+            <div class="flex-1 flex flex-col items-center text-center">
+              <div class="flex items-center justify-center gap-2 mb-1">
+                  <h3 class="text-2xl font-bold text-[#98690C]">Lucas</h3>
+                  <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <circle cx="10" cy="14" r="5" />
+                      <path d="M19 5h-5m5 0v5m0-5-7 7" />
+                  </svg>
+              </div>
+              <p class="text-[#818B51] text-base mb-1">Golden Retriever • 4 years</p>
+              <div class="flex items-center justify-center gap-5 mb-1">
+                  <button class="bg-[#98690C] text-white px-5 py-2 rounded-full hover:bg-[#8b5e3c] transition mt-auto "><a href="adopt.html">More Details</a></button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="flex justify-center pb-20">
+          <button class="explore-button mt-8 bg-[#8b5e3c] text-white px-6 py-2 rounded-full hover:bg-[#98690C] transition">
+            🔍 Explore All
+          </button>
+        </div>
+      </section>
       
-      <!-- Left: Contact Info -->
-      <div class="footer-section footer-left">
-        <p>5/10 Moo 7 Lak Hok, Pathum Thani, Bangkok</p>
-        <p>info@pawsitively.com</p>
-        <p>&copy; 2024 Brand, Inc. • 
-          <a href="#">Privacy</a> • 
-          <a href="#">Terms</a> • 
-          <a href="#">Sitemap</a>
-        </p>
-      </div>
-  
-      <!-- Center: Logo & Brand -->
-      <div class="footer-section footer-center">
-        <span class="footer-brand">🐾 Tailwaggers</span>
-      </div>
-  
-      <!-- Right: Social Icons -->
-      <div class="footer-section footer-right">
-        <a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/twitter/twitter-original.svg" alt="Twitter"></a>
-        <a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg" alt="Facebook"></a>
-        <a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn"></a>
-        <a href="#"><img src="src/image/instagram.png" alt="Instagram"></a>
-      </div>
+
+      <!-- Testimonial -->
+    <div class="relative flex flex-col bg-white backdrop-blur-md p-6 max-w-full min-h-[250px]">
+      <section class="text-center px-6 pb-16">
+          <h2 class="text-lg text-yellow-600 font-semibold mb-1 uppercase">Testimonials</h2>
+          <h1 class="text-2xl font-bold">Happy Families, Happy Stories</h1>
+          <p class="text-centertext-gray-600 mt-2 max-w-2xl mx-auto">
+            Your support helps us make a positive impact in the lives of animals every day. Every animal deserve a loving
+            home, and our shelter charisty is committed to making that a reality.
+          </p>
+      </section>
+
+      <section class="px-6 pb-16">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-10 px-30 ml-20 py-7">
+          <!-- Testimonial 1 -->
+          <div class="relative flex flex-col bg-[#FFE6B2] border border-[#F59E42] backdrop-blur-md shadow-lg p-6 max-w-[450px] min-h-[300px]">
+            <img src="src/image/lucas.jpg" alt="Leo" class="w-32 h-32 object-cover rounded-full border-4 border-white shadow-lg mx-auto mb-4" />
+            <div class="flex-1 flex flex-col text-left">
+              <div class="flex items-center justify-center gap-2 mb-1">
+                <p class="text-[#818B51] text-base mb-1">Joseph</p>
+              </div>
+              <p class="text-gray-700 text-sm mb-4">"I can't thank the shelter charity enough for bringing Luna into my life."</p>
+            </div>
+          </div>
+          <!-- testimonial 2 -->
+          <div class="relative flex flex-col bg-[#FFE6B2] border border-[#F59E42] backdrop-blur-md shadow-lg p-6 max-w-[450px] min-h-[300px]">
+            <img src="src/image/lucas.jpg" alt="Leo" class="w-32 h-32 object-cover rounded-full border-4 border-white shadow-lg mx-auto mb-4" />
+            <div class="flex-1 flex flex-col text-left">
+              <div class="flex items-center justify-center gap-2 mb-1">
+                <p class="text-[#818B51] text-base mb-1">Joseph</p>
+              </div>
+              <p class="text-gray-700 text-sm mb-4">"I can't thank the shelter charity enough for bringing Luna into my life."</p>
+            </div>
+        </div>
+      </section>
     </div>
-  </footer>
-  
+
+    <!-- footer -->
+      <footer class="custom-footer bg-[#FFF6E3] py-8 text-sm text-[#333] shadow-md">
+        <div class="footer-container max-w-6xl mx-auto flex flex-wrap justify-between items-center text-center gap-8">
+          <!-- Left: Contact Info -->
+          <div class="footer-section footer-left flex-1 min-w-[220px] text-left">
+            <p class="mb-1">5/10 Moo 7 Lak Hok, Pathum Thani, Bangkok</p>
+            <p class="mb-1">info@pawsitively.com</p>
+            <p>
+              &copy; 2024 Brand, Inc. • 
+              <a href="#" class="hover:underline">Privacy</a> • 
+              <a href="#" class="hover:underline">Terms</a> • 
+              <a href="#" class="hover:underline">Sitemap</a>
+            </p>
+          </div>
+          <!-- Center: Logo & Brand -->
+          <div class="footer-section footer-center flex-1 min-w-[220px] flex items-center justify-center gap-2 text-[#98690C] text-lg font-bold">
+            <img src="src/image/logo.png" alt="logo" class="w-10 h-10">
+            <span class="footer-brand">Tailwaggers</span>
+          </div>
+          <!-- Right: Social Icons -->
+          <div class="footer-section footer-right flex-1 min-w-[220px] flex items-center justify-center gap-3">
+            <a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/twitter/twitter-original.svg" alt="Twitter" class="w-5 h-5" /></a>
+            <a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg" alt="Facebook" class="w-5 h-5" /></a>
+            <a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" class="w-5 h-5" /></a>
+            <a href="#"><img src="src/image/instagram.png" alt="Instagram" class="w-5 h-5" /></a>
+          </div>
+        </div>
+</footer>
+</body>
 </html>

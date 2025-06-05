@@ -1,15 +1,44 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <header>
-        <div class="logo">Tailwaggers</div>>
+    <title>Login</title>
+    <link href="output.css" rel="stylesheet">
 
-        </div>
-    </header>
-    
+    <script src="https://unpkg.com/@popmotion/popmotion/dist/popmotion.global.min.js"></script>
+  <style>
+    .fade-in {
+      animation: fadeInUp 1s ease-out both;
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body class="bg-[#FAE7C0] font-sans min-h-screen flex items-center justify-center">
+  <div class="bg-white shadow-lg rounded-2xl p-10 w-full max-w-md fade-in">
+    <img src="src/image/logo.png" alt="logo" class="w-24 h-24 mx-auto mb-6">
+    <h2 class="text-3xl font-bold text-center text-[#98690C] mb-6">Welcome Back</h2>
+
+    <form class="flex flex-col gap-4" action="#" method="POST">
+      <input type="email" placeholder="email" class="px-4 py-3 border rounded-2xl w-full text-sm placeholder-gray-400 text-[#000000] focus:placeholder-transparent" required />
+      <input type="password" placeholder="password" class="px-4 py-3 border rounded-2xl w-full text-sm placeholder-gray-400 text-gray-700" required />
+
+      <button type="submit" class="bg-[#98690C] text-white py-3 rounded-2xl hover:bg-[#81570a] transition ">Login</button>
+
+      <p class="text-sm text-center text-gray-500 mt-2">
+        Don't have an account?
+        <a href="signup.html" class="underline text-[#98690C] hover:text-[#6d4e0a]">Sign up</a>
+      </p>
+    </form>
+  </div>
 </body>
 </html>
