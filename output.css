@@ -50,6 +50,7 @@
     --container-xl: 36rem;
     --container-2xl: 42rem;
     --container-3xl: 48rem;
+    --container-4xl: 56rem;
     --container-6xl: 72rem;
     --text-xs: 0.75rem;
     --text-xs--line-height: calc(1 / 0.75);
@@ -88,7 +89,6 @@
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
-  }
 }
 @layer base {
   *, ::after, ::before, ::backdrop, ::file-selector-button {
@@ -167,7 +167,6 @@
   }
   img, svg, video, canvas, audio, iframe, embed, object {
     display: block;
-    vertical-align: middle;
   }
   img, video {
     max-width: 100%;
@@ -934,6 +933,9 @@
   .min-h-screen {
     min-height: 100vh;
   }
+  .w-1\/2 {
+    width: calc(1/2 * 100%);
+  }
   .w-2 {
     width: calc(var(--spacing) * 2);
   }
@@ -1074,6 +1076,9 @@
   }
   .max-w-3xl {
     max-width: var(--container-3xl);
+  }
+  .max-w-4xl {
+    max-width: var(--container-4xl);
   }
   .max-w-6xl {
     max-width: var(--container-6xl);
@@ -1404,6 +1409,9 @@
   .border-\[\#F59E42\] {
     border-color: #F59E42;
   }
+  .border-\[\#FFE6B2\] {
+    border-color: #FFE6B2;
+  }
   .border-\[\#db4437\] {
     border-color: #db4437;
   }
@@ -1429,7 +1437,7 @@
     border-color: var(--color-white);
   }
   .bg-\[\#\#FFE6B2\] {
-    background-color: ##FFE6B2;
+    background-color: #FFE6B2;
   }
   .bg-\[\#8b5e3c\] {
     background-color: #8b5e3c;
@@ -3349,4 +3357,5 @@
       --tw-scale-z: 1;
     }
   }
+}
 }

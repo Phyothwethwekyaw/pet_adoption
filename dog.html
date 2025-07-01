@@ -1,260 +1,584 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dog Available</title>
-    <link href="output.css" rel="stylesheet">
-</head>
-<body class="bg-white pt-20">
+    <link href="output.css" rel="stylesheet" />
+  </head>
+  <body class="bg-white pt-20">
     <header class="bg-[#daaf5360] p-10 w-full h-50 relative mb-20">
-        <h2 class="text-3xl md:text-4xl font-bold align-center text-[#818B51] mb-8 pl-20 mt-10">Adopt a Dog</h2>
-        <div class="absolute top-0 right-10 flex space-x-8">
-        <img src="src/image/image.png" alt="dog1" class="w-50 h-50 mt-15 pt-10 mr-10">
-        <img src="src/image/image copy.png" alt="dog1" class="w-50 h-50 mt-15 pt-10 mr-5">
-        </div>
+      <h2
+        class="text-3xl md:text-4xl font-bold align-center text-[#818B51] mb-8 pl-20 mt-10"
+      >
+        Adopt a Dog
+      </h2>
+      <div class="absolute top-0 right-10 flex space-x-8">
+        <img
+          src="src/image/image.png"
+          alt="dog1"
+          class="w-50 h-50 mt-15 pt-10 mr-10"
+        />
+        <img
+          src="src/image/image copy.png"
+          alt="dog1"
+          class="w-50 h-50 mt-15 pt-10 mr-5"
+        />
+      </div>
     </header>
-    <nav class="bg-[#fcf9f3] dark:bg-[hsl(40,60%,97%)] fixed w-full z-20 top-0 start-0 border-b border-[#fcf9f3] dark:border-[#fcf9f3]">
-        <div class="max-w-screen-xl flex flex-wrap items-center justify-between p-4 mx-auto">
-            <div class="flex items-center gap-2">
-                <img src="src/image/logo.png" alt="logo" class="w-10 h-10" />
-                <span class="self-center text-[#98690C] text-3xl font-semibold whitespace-nowrap ml-0">Tailwaggers</span>
-            </div>
-            <div class="text-[#98690C] flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse"> 
-                <button type="button" class="text-white bg-[#98690C] hover:bg-[#98690C] focus:ring-4 focus:outline-none focus:ring-[#98690C] font-medium rounded-lg text-sm px-5 py-2.5 text-center hover:font-bold"><a href="login.html">SignUp</a></button>
-                <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
-                    <span class="sr-only">Open main menu</span>
-                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-                    </svg>
-                </button>
-            </div>
-            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
-                <ul class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-[#fcf9f3] md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-[#fcf9f3] dark:bg-[#fcf9f3] dark:border-[#fcf9f3]">
-                    <li>
-                        <a href="index.html" class="block py-2 pl-3 pr-4 text-[#98690C] rounded hover:text-[#98690C] hover:font-bold md:hover:bg-transparent md:hover:text-[#98690C] md:p-0 dark:text-[#98690C] dark:hover:bg-[#fcf9f3] dark:hover:text-[#98690C]" >Home</a>
-                    </li>
-                    <li>
-                        <a href="volunteer.html" class="block py-2 pl-3 pr-4 text-[#98690C] rounded hover:text-[#98690C] hover:font-bold md:hover:bg-transparent md:hover:text-[#98690C] md:p-0 dark:text-[#98690C] dark:hover:bg-[#fcf9f3] dark:hover:text-[#98690C]">Volunteer</a>
-                    </li>
-                    <li class="relative group">
-                        <button id="adoptDropdownBtn" class="flex items-center w-full py-2 px-3 text-[#98690C] rounded hover:font-bold md:hover:bg-transparent md:hover:text-[#98690C] md:p-0 dark:text-[#98690C] dark:hover:bg-[#fcf9f3] dark:hover:text-[#98690C]">
-                            Adopt
-                            <svg class="w-3 h-3 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
-                            </svg>
-                        </button>
-                        <ul id="adoptDropdownMenu" class="absolute z-10 hidden group-hover:block bg-[#fcf9f3] text-[#98690C] rounded-lg shadow-md w-40">
-                            <li><a href="#" class="block px-4 py-2 hover:bg-[#f3eee3] hover:font-bold">Dogs</a></li>
-                            <li><a href="cat.html" class="block px-4 py-2 hover:bg-[#f3eee3] hover:font-bold">Cats</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="contact.html" class="block py-2 pl-3 pr-4 text-[#98690C] rounded hover:text-[#98690C] hover:font-bold md:hover:bg-transparent md:hover:text-[#98690C] md:p-0 dark:text-[#98690C] dark:hover:bg-[#fcf9f3] dark:hover:text-[#98690C]">Contact Us</a>
-                    </li>
-                    <li>
-                        <a href="about.html" class="block py-2 pl-3 pr-4 text-[#98690C] rounded hover:text-[#98690C] hover:font-bold md:hover:bg-transparent md:hover:text-[#98690C] md:p-0 dark:text-[#98690C] dark:hover:bg-[#fcf9f3] dark:hover:text-[#98690C]">About Us</a>
-                    </li>
-                </ul>
-            </div>
+    <nav
+      class="bg-[#fcf9f3] dark:bg-[hsl(40,60%,97%)] fixed w-full z-20 top-0 start-0 border-b border-[#fcf9f3] dark:border-[#fcf9f3]"
+    >
+      <div
+        class="max-w-screen-xl flex flex-wrap items-center justify-between p-4 mx-auto"
+      >
+        <div class="flex items-center gap-2">
+          <a href="index.html"
+            ><img src="src/image/logo.png" alt="logo" class="w-10 h-10"
+          /></a>
+          <span
+            class="self-center text-[#98690C] text-3xl font-semibold whitespace-nowrap ml-0"
+            >Tailwaggers</span
+          >
         </div>
+        <div
+          class="text-[#98690C] flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse"
+        >
+          <button
+            type="button"
+            class="text-white bg-[#98690C] hover:bg-[#98690C] focus:ring-4 focus:outline-none focus:ring-[#98690C] font-medium rounded-lg text-sm px-5 py-2.5 text-center hover:font-bold"
+          >
+            <a href="login.html">SignUp</a>
+          </button>
+          <button
+            data-collapse-toggle="navbar-sticky"
+            type="button"
+            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            aria-controls="navbar-sticky"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="w-5 h-5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 17 14"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M1 1h15M1 7h15M1 13h15"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+          id="navbar-sticky"
+        >
+          <ul
+            class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-[#fcf9f3] md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-[#fcf9f3] dark:bg-[#fcf9f3] dark:border-[#fcf9f3]"
+          >
+            <li>
+              <a
+                href="index.html"
+                class="block py-2 pl-3 pr-4 text-[#98690C] rounded hover:text-[#98690C] hover:font-bold md:hover:bg-transparent md:hover:text-[#98690C] md:p-0 dark:text-[#98690C] dark:hover:bg-[#fcf9f3] dark:hover:text-[#98690C]"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="volunteer.html"
+                class="block py-2 pl-3 pr-4 text-[#98690C] rounded hover:text-[#98690C] hover:font-bold md:hover:bg-transparent md:hover:text-[#98690C] md:p-0 dark:text-[#98690C] dark:hover:bg-[#fcf9f3] dark:hover:text-[#98690C]"
+                >Volunteer</a
+              >
+            </li>
+            <li class="relative group">
+              <button
+                id="adoptDropdownBtn"
+                class="flex items-center w-full py-2 px-3 text-[#98690C] rounded hover:font-bold md:hover:bg-transparent md:hover:text-[#98690C] md:p-0 dark:text-[#98690C] dark:hover:bg-[#fcf9f3] dark:hover:text-[#98690C]"
+              >
+                Adopt
+                <svg
+                  class="w-3 h-3 ml-2"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 10 6"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m1 1 4 4 4-4"
+                  />
+                </svg>
+              </button>
+              <ul
+                id="adoptDropdownMenu"
+                class="absolute z-10 hidden group-hover:block bg-[#fcf9f3] text-[#98690C] rounded-lg shadow-md w-40"
+              >
+                <li>
+                  <a
+                    href="#"
+                    class="block px-4 py-2 hover:bg-[#f3eee3] hover:font-bold"
+                    >Dogs</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="cat.html"
+                    class="block px-4 py-2 hover:bg-[#f3eee3] hover:font-bold"
+                    >Cats</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a
+                href="contact.html"
+                class="block py-2 pl-3 pr-4 text-[#98690C] rounded hover:text-[#98690C] hover:font-bold md:hover:bg-transparent md:hover:text-[#98690C] md:p-0 dark:text-[#98690C] dark:hover:bg-[#fcf9f3] dark:hover:text-[#98690C]"
+                >Contact Us</a
+              >
+            </li>
+            <li>
+              <a
+                href="about.html"
+                class="block py-2 pl-3 pr-4 text-[#98690C] rounded hover:text-[#98690C] hover:font-bold md:hover:bg-transparent md:hover:text-[#98690C] md:p-0 dark:text-[#98690C] dark:hover:bg-[#fcf9f3] dark:hover:text-[#98690C]"
+                >About Us</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
-<section class="text-center px-6 pb-16">
-    <h2 class="text-lg text-yellow-600 font-semibold mb-1">Meet the buddies</h2>
-    <h1 class="text-2xl font-bold">Puppies Waiting for Adoption</h1>
-    <p class="text-gray-600 mt-2 max-w-2xl mx-auto">
-      Do you need help finding your perfect match or do you have general questions? Email contact@paws.org for suggestions on which animal may be the best for you.
-    </p>
-</section>
+    <section class="text-center px-6 pb-16">
+      <h2 class="text-lg text-yellow-600 font-semibold mb-1">
+        Meet the buddies
+      </h2>
+      <h1 class="text-2xl font-bold">Puppies Waiting for Adoption</h1>
+      <p class="text-gray-600 mt-2 max-w-2xl mx-auto">
+        Do you need help finding your perfect match or do you have general
+        questions? Email info@example.com for suggestions on which animal may be
+        the best for you.
+      </p>
+    </section>
 
-<section class="px-6 pb-16">
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-20 px-10 ml-20 py-7">
-    <!-- Dog Card 1 -->
-    <div class="relative flex flex-col bg-white/70 backdrop-blur-md rounded-2xl shadow-lg p-6 max-w-[320px] min-h-[300px]">
-      <button class="absolute top-4 right-4 group">
-        <svg class="w-7 h-7 text-gray-300 group-hover:text-red-400 transition-colors" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/>
-        </svg>
-      </button>
-      <img src="src/image/lucas.jpg" alt="Leo" class="w-32 h-32 object-cover rounded-xl border-4 border-white shadow-lg mx-auto mb-4" />
-      <div class="flex-1 flex flex-col items-center text-center">
-        <div class="flex items-center justify-center gap-2 mb-1">
-            <h3 class="text-2xl font-bold text-[#98690C]">Lucas</h3>
-            <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+    <section class="px-6 pb-16">
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-20 px-10 ml-20 py-7"
+      >
+        <!-- Dog Card 1 -->
+        <div
+          class="relative flex flex-col bg-white/70 backdrop-blur-md rounded-2xl shadow-lg p-6 max-w-[320px] min-h-[300px]"
+        >
+          <button class="absolute top-4 right-4 group">
+            <svg
+              class="w-7 h-7 text-gray-300 group-hover:text-red-400 transition-colors"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+              />
+            </svg>
+          </button>
+          <img
+            src="src/image/lucas.jpg"
+            alt="Leo"
+            class="w-32 h-32 object-cover rounded-xl border-4 border-white shadow-lg mx-auto mb-4"
+          />
+          <div class="flex-1 flex flex-col items-center text-center">
+            <div class="flex items-center justify-center gap-2 mb-1">
+              <h3 class="text-2xl font-bold text-[#98690C]">Lucas</h3>
+              <svg
+                class="w-5 h-5 text-blue-500"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
                 <circle cx="10" cy="14" r="5" />
                 <path d="M19 5h-5m5 0v5m0-5-7 7" />
-            </svg>
-        </div>
-        <p class="text-[#818B51] text-base mb-1">Golden Retriever • 4 years</p>
-        <p class="text-gray-700 text-sm mb-4">Leo is a playful and affectionate pup who loves belly rubs and long walks. He’s looking for a loving family!</p>
-        <div class="flex items-center justify-center gap-5 mb-1">
-            <button class="bg-[#98690C] text-white px-5 py-2 rounded-full hover:bg-[#8b5e3c] transition mt-auto "><a href="apply.html">Adopt</a></button>
-            <button class="bg-[#F59E42] text-white px-5 py-2 rounded-full hover:bg-[#F97316] transition mt-auto"><a href="apply.html">Donate</a></button>
-        </div>
-      </div>
-    </div>
-    <!-- Dog Card 2 -->
-    <div class="relative flex flex-col bg-white/70 backdrop-blur-md rounded-2xl shadow-lg p-6 max-w-[320px] min-h-[300px]">
-      <button class="absolute top-4 right-4 group">
-        <svg class="w-7 h-7 text-gray-300 group-hover:text-red-400 transition-colors" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/>
-        </svg>
-      </button>
-      <img src="src/image/paw.jpeg" alt="Paw" class="w-32 h-32 object-cover rounded-xl border-4 border-white shadow-lg mx-auto mb-4" />
-      <div class="flex-1 flex flex-col items-center text-center">
-         <div class="flex items-center justify-center gap-2 mb-1">
-            <h3 class="text-2xl font-bold text-[#98690C]">Paw</h3>
-            <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <circle cx="10" cy="14" r="5" />
-                <path d="M19 5h-5m5 0v5m0-5-7 7" />
-            </svg>
-        </div>
-        <p class="text-[#818B51] text-base mb-1">Beagle • 9 months</p>
-        <p class="text-gray-700 text-sm mb-4">Paw is energetic and curious, always ready for a new adventure. He loves playing fetch and making new friends!</p>
-        <div class="flex items-center justify-center gap-5 mb-1">
-            <button class="bg-[#98690C] text-white px-5 py-2 rounded-full hover:bg-[#8b5e3c] transition mt-auto "><a href="apply.html">Adopt</a></button>
-            <button class="bg-[#F59E42] text-white px-5 py-2 rounded-full hover:bg-[#F97316] transition mt-auto"><a href="apply.html">Donate</a></button>
-        </div>
-      </div>
-    </div>
-    <!-- Dog Card 3 -->
-    <div class="relative flex flex-col bg-white/70 backdrop-blur-md rounded-2xl shadow-lg p-6 max-w-[320px] min-h-[300px]">
-      <button class="absolute top-4 right-4 group">
-        <svg class="w-7 h-7 text-gray-300 group-hover:text-red-400 transition-colors" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/>
-        </svg>
-      </button>
-      <img src="src/image/lilyy.png" alt="Lily" class="w-32 h-32 object-cover rounded-xl border-4 border-white shadow-lg mx-auto mb-4" />
-      <div class="flex-1 flex flex-col items-center text-center">
-        <div class="flex items-center justify-center gap-2 mb-1">
-            <h3 class="text-2xl font-bold text-[#98690C]">Lily</h3>
-            <svg class="w-5 h-5 text-pink-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <circle cx="12" cy="8" r="5" />
-                <line x1="12" y1="13" x2="12" y2="21" />
-                <line x1="9" y1="18" x2="15" y2="18" />
-            </svg>
-        </div>
-        <p class="text-[#818B51] text-base mb-1">Shih Tzu • 1 year</p>
-        <p class="text-gray-700 text-sm mb-4">Lily is gentle and sweet, perfect for a calm home. She enjoys cuddles and quiet afternoons by your side.</p>
-        <div class="flex items-center justify-center gap-5 mb-1">
-            <button class="bg-[#98690C] text-white px-5 py-2 rounded-full hover:bg-[#8b5e3c] transition mt-auto "><a href="apply.html">Adopt</a></button>
-            <button class="bg-[#F59E42] text-white px-5 py-2 rounded-full hover:bg-[#F97316] transition mt-auto"><a href="apply.html">Donate</a></button>
-        </div>
-      </div>
-    </div>
-    <!-- Dog Card 4 -->
-    <div class="relative flex flex-col bg-white/70 backdrop-blur-md rounded-2xl shadow-lg p-6 max-w-[320px] min-h-[300px]">
-      <button class="absolute top-4 right-4 group">
-        <svg class="w-7 h-7 text-gray-300 group-hover:text-red-400 transition-colors" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/>
-        </svg>
-      </button>
-      <img src="src/image/lucky.png" alt="Lucky" class="w-32 h-32 object-cover rounded-xl border-4 border-white shadow-lg mx-auto mb-4" />
-      <div class="flex-1 flex flex-col items-center text-center">
-        <div class="flex items-center justify-center gap-2 mb-1">
-            <h3 class="text-2xl font-bold text-[#98690C]">Lucky</h3>
-            <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <circle cx="10" cy="14" r="5" />
-                <path d="M19 5h-5m5 0v5m0-5-7 7" />
-            </svg>
-        </div>
-        <p class="text-[#818B51] text-base mb-1">Golden Retriever • 8 months</p>
-        <p class="text-gray-700 text-sm mb-4">Lucky is a playful and affectionate pup who loves belly rubs and long walks. He’s looking for a loving family!</p>
-        <div class="flex items-center justify-center gap-5 mb-1">
-            <button class="bg-[#98690C] text-white px-5 py-2 rounded-full hover:bg-[#8b5e3c] transition mt-auto "><a href="apply.html">Adopt</a></button>
-            <button class="bg-[#F59E42] text-white px-5 py-2 rounded-full hover:bg-[#F97316] transition mt-auto"><a href="apply.html">Donate</a></button>
-        </div>
-      </div>
-    </div>
-    <!-- Dog Card 5 -->
-    <div class="relative flex flex-col bg-white/70 backdrop-blur-md rounded-2xl shadow-lg p-6 max-w-[320px] min-h-[300px]">
-      <button class="absolute top-4 right-4 group">
-        <svg class="w-7 h-7 text-gray-300 group-hover:text-red-400 transition-colors" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/>
-        </svg>
-      </button>
-      <img src="src/image/paw.jpeg" alt="Paw" class="w-32 h-32 object-cover rounded-xl border-4 border-white shadow-lg mx-auto mb-4" />
-      <div class="flex-1 flex flex-col items-center text-center">
-         <div class="flex items-center justify-center gap-2 mb-1">
-            <h3 class="text-2xl font-bold text-[#98690C]">Paw</h3>
-            <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <circle cx="10" cy="14" r="5" />
-                <path d="M19 5h-5m5 0v5m0-5-7 7" />
-            </svg>
-        </div>
-        <p class="text-[#818B51] text-base mb-1">Beagle • 9 months</p>
-        <p class="text-gray-700 text-sm mb-4">Paw is energetic and curious, always ready for a new adventure. He loves playing fetch and making new friends!</p>
-        <div class="flex items-center justify-center gap-5 mb-1">
-            <button class="bg-[#98690C] text-white px-5 py-2 rounded-full hover:bg-[#8b5e3c] transition mt-auto "><a href="apply.html">Adopt</a></button>
-            <button class="bg-[#F59E42] text-white px-5 py-2 rounded-full hover:bg-[#F97316] transition mt-auto"><a href="apply.html">Donate</a></button>
-        </div>
-      </div>
-    </div>
-    <!-- Dog Card 6 -->
-    <div class="relative flex flex-col bg-white/70 backdrop-blur-md rounded-2xl shadow-lg p-6 max-w-[320px] min-h-[300px]">
-      <button class="absolute top-4 right-4 group">
-        <svg class="w-7 h-7 text-gray-300 group-hover:text-red-400 transition-colors" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/>
-        </svg>
-      </button>
-      <img src="src/image/lilyy.png" alt="Lily" class="w-32 h-32 object-cover rounded-xl border-4 border-white shadow-lg mx-auto mb-4" />
-      <div class="flex-1 flex flex-col items-center text-center">
-        <div class="flex items-center justify-center gap-2 mb-1">
-            <h3 class="text-2xl font-bold text-[#98690C]">Lily</h3>
-            <svg class="w-5 h-5 text-pink-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <circle cx="12" cy="8" r="5" />
-                <line x1="12" y1="13" x2="12" y2="21" />
-                <line x1="9" y1="18" x2="15" y2="18" />
-            </svg>
-        </div>
-        <p class="text-[#818B51] text-base mb-1">Shih Tzu • 1 year</p>
-        <p class="text-gray-700 text-sm mb-4">Lily is gentle and sweet, perfect for a calm home. She enjoys cuddles and quiet afternoons by your side.</p>
-        <div class="flex items-center justify-center gap-5 mb-1">
-            <button class="bg-[#98690C] text-white px-5 py-2 rounded-full hover:bg-[#8b5e3c] transition mt-auto "><a href="apply.html">Adopt</a></button>
-            <button class="bg-[#F59E42] text-white px-5 py-2 rounded-full hover:bg-[#F97316] transition mt-auto"><a href="apply.html">Donate</a></button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="flex justify-center space-x-2 pt-15 pb-7">
-    <button class="px-3 py-1 border rounded hover:bg-gray-100">&lt;</button>
-    <button class="px-3 py-1 border rounded bg-yellow-400 text-white">1</button>
-    <button class="px-3 py-1 border rounded">2</button>
-    <button class="px-3 py-1 border rounded">3</button>
-    <button class="px-3 py-1 border rounded">...</button>
-    <button class="px-3 py-1 border rounded">5</button>
-    <button class="px-3 py-1 border rounded hover:bg-gray-100">&gt;</button>
-  </div>
-</section>
-
-<!-- footer -->
-<footer class="custom-footer bg-[#FFF6E3] py-8 text-sm text-[#333] shadow-md">
-        <div class="footer-container max-w-6xl mx-auto flex flex-wrap justify-between items-center text-center gap-8">
-          <!-- Left: Contact Info -->
-          <div class="footer-section footer-left flex-1 min-w-[220px] text-left">
-            <p class="mb-1">5/10 Moo 7 Lak Hok, Pathum Thani, Bangkok</p>
-            <p class="mb-1">info@pawsitively.com</p>
-            <p>
-              &copy; 2024 Brand, Inc. • 
-              <a href="#" class="hover:underline">Privacy</a> • 
-              <a href="#" class="hover:underline">Terms</a> • 
-              <a href="#" class="hover:underline">Sitemap</a>
+              </svg>
+            </div>
+            <p class="text-[#818B51] text-base mb-1">
+              Golden Retriever • 4 years
             </p>
-          </div>
-          <!-- Center: Logo & Brand -->
-          <div class="footer-section footer-center flex-1 min-w-[220px] flex items-center justify-center gap-2 text-[#98690C] text-lg font-bold">
-            <img src="src/image/logo.png" alt="logo" class="w-10 h-10">
-            <span class="footer-brand">Tailwaggers</span>
-          </div>
-          <!-- Right: Social Icons -->
-          <div class="footer-section footer-right flex-1 min-w-[220px] flex items-center justify-center gap-3">
-            <a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/twitter/twitter-original.svg" alt="Twitter" class="w-5 h-5" /></a>
-            <a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg" alt="Facebook" class="w-5 h-5" /></a>
-            <a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" class="w-5 h-5" /></a>
-            <a href="#"><img src="src/image/instagram.png" alt="Instagram" class="w-5 h-5" /></a>
+            <p class="text-gray-700 text-sm mb-4">
+              Leo is a playful and affectionate pup who loves belly rubs and
+              long walks. He’s looking for a loving family!
+            </p>
+            <div class="flex items-center justify-center gap-5 mb-1">
+              <button
+                class="bg-[#98690C] text-white px-5 py-2 rounded-full hover:bg-[#8b5e3c] transition mt-auto"
+              >
+                <a href="adopt.html">Adopt</a>
+              </button>
+              <!-- <button
+                class="bg-[#F59E42] text-white px-5 py-2 rounded-full hover:bg-[#F97316] transition mt-auto"
+              >
+                <a href="apply.html">Donate</a>
+              </button> -->
+            </div>
           </div>
         </div>
-</footer>
+        <!-- Dog Card 2 -->
+        <div
+          class="relative flex flex-col bg-white/70 backdrop-blur-md rounded-2xl shadow-lg p-6 max-w-[320px] min-h-[300px]"
+        >
+          <button class="absolute top-4 right-4 group">
+            <svg
+              class="w-7 h-7 text-gray-300 group-hover:text-red-400 transition-colors"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+              />
+            </svg>
+          </button>
+          <img
+            src="src/image/paw.jpeg"
+            alt="Paw"
+            class="w-32 h-32 object-cover rounded-xl border-4 border-white shadow-lg mx-auto mb-4"
+          />
+          <div class="flex-1 flex flex-col items-center text-center">
+            <div class="flex items-center justify-center gap-2 mb-1">
+              <h3 class="text-2xl font-bold text-[#98690C]">Paw</h3>
+              <svg
+                class="w-5 h-5 text-blue-500"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <circle cx="10" cy="14" r="5" />
+                <path d="M19 5h-5m5 0v5m0-5-7 7" />
+              </svg>
+            </div>
+            <p class="text-[#818B51] text-base mb-1">Beagle • 9 months</p>
+            <p class="text-gray-700 text-sm mb-4">
+              Paw is energetic and curious, always ready for a new adventure. He
+              loves playing fetch and making new friends!
+            </p>
+            <div class="flex items-center justify-center gap-5 mb-1">
+              <button
+                class="bg-[#98690C] text-white px-5 py-2 rounded-full hover:bg-[#8b5e3c] transition mt-auto"
+              >
+                <a href="adopt.html">Adopt</a>
+              </button>
+              <!-- <button
+                class="bg-[#F59E42] text-white px-5 py-2 rounded-full hover:bg-[#F97316] transition mt-auto"
+              >
+                <a href="apply.html"></a>
+              </button> -->
+            </div>
+          </div>
+        </div>
+        <!-- Dog Card 3 -->
+        <div
+          class="relative flex flex-col bg-white/70 backdrop-blur-md rounded-2xl shadow-lg p-6 max-w-[320px] min-h-[300px]"
+        >
+          <button class="absolute top-4 right-4 group">
+            <svg
+              class="w-7 h-7 text-gray-300 group-hover:text-red-400 transition-colors"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+              />
+            </svg>
+          </button>
+          <img
+            src="src/image/lilyy.png"
+            alt="Lily"
+            class="w-32 h-32 object-cover rounded-xl border-4 border-white shadow-lg mx-auto mb-4"
+          />
+          <div class="flex-1 flex flex-col items-center text-center">
+            <div class="flex items-center justify-center gap-2 mb-1">
+              <h3 class="text-2xl font-bold text-[#98690C]">Lily</h3>
+              <svg
+                class="w-5 h-5 text-pink-500"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <circle cx="12" cy="8" r="5" />
+                <line x1="12" y1="13" x2="12" y2="21" />
+                <line x1="9" y1="18" x2="15" y2="18" />
+              </svg>
+            </div>
+            <p class="text-[#818B51] text-base mb-1">Shih Tzu • 1 year</p>
+            <p class="text-gray-700 text-sm mb-4">
+              Lily is gentle and sweet, perfect for a calm home. She enjoys
+              cuddles and quiet afternoons by your side.
+            </p>
+            <div class="flex items-center justify-center gap-5 mb-1">
+              <button
+                class="bg-[#98690C] text-white px-5 py-2 rounded-full hover:bg-[#8b5e3c] transition mt-auto"
+              >
+                <a href="adopt.html">Adopt</a>
+              </button>
+              <!-- <button
+                class="bg-[#F59E42] text-white px-5 py-2 rounded-full hover:bg-[#F97316] transition mt-auto"
+              >
+                <a href="apply.html">Donate</a>
+              </button> -->
+            </div>
+          </div>
+        </div>
+        <!-- Dog Card 4 -->
+        <div
+          class="relative flex flex-col bg-white/70 backdrop-blur-md rounded-2xl shadow-lg p-6 max-w-[320px] min-h-[300px]"
+        >
+          <button class="absolute top-4 right-4 group">
+            <svg
+              class="w-7 h-7 text-gray-300 group-hover:text-red-400 transition-colors"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+              />
+            </svg>
+          </button>
+          <img
+            src="src/image/lucky.png"
+            alt="Lucky"
+            class="w-32 h-32 object-cover rounded-xl border-4 border-white shadow-lg mx-auto mb-4"
+          />
+          <div class="flex-1 flex flex-col items-center text-center">
+            <div class="flex items-center justify-center gap-2 mb-1">
+              <h3 class="text-2xl font-bold text-[#98690C]">Lucky</h3>
+              <svg
+                class="w-5 h-5 text-blue-500"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <circle cx="10" cy="14" r="5" />
+                <path d="M19 5h-5m5 0v5m0-5-7 7" />
+              </svg>
+            </div>
+            <p class="text-[#818B51] text-base mb-1">
+              Golden Retriever • 8 months
+            </p>
+            <p class="text-gray-700 text-sm mb-4">
+              Lucky is a playful and affectionate pup who loves belly rubs and
+              long walks. He’s looking for a loving family!
+            </p>
+            <div class="flex items-center justify-center gap-5 mb-1">
+              <button
+                class="bg-[#98690C] text-white px-5 py-2 rounded-full hover:bg-[#8b5e3c] transition mt-auto"
+              >
+                <a href="adopt.html">Adopt</a>
+              </button>
+              <!-- <button
+                class="bg-[#F59E42] text-white px-5 py-2 rounded-full hover:bg-[#F97316] transition mt-auto"
+              >
+                <a href="apply.html">Donate</a>
+              </button> -->
+            </div>
+          </div>
+        </div>
+        <!-- Dog Card 5 -->
+        <div
+          class="relative flex flex-col bg-white/70 backdrop-blur-md rounded-2xl shadow-lg p-6 max-w-[320px] min-h-[300px]"
+        >
+          <button class="absolute top-4 right-4 group">
+            <svg
+              class="w-7 h-7 text-gray-300 group-hover:text-red-400 transition-colors"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+              />
+            </svg>
+          </button>
+          <img
+            src="src/image/paw.jpeg"
+            alt="Paw"
+            class="w-32 h-32 object-cover rounded-xl border-4 border-white shadow-lg mx-auto mb-4"
+          />
+          <div class="flex-1 flex flex-col items-center text-center">
+            <div class="flex items-center justify-center gap-2 mb-1">
+              <h3 class="text-2xl font-bold text-[#98690C]">Paw</h3>
+              <svg
+                class="w-5 h-5 text-blue-500"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <circle cx="10" cy="14" r="5" />
+                <path d="M19 5h-5m5 0v5m0-5-7 7" />
+              </svg>
+            </div>
+            <p class="text-[#818B51] text-base mb-1">Beagle • 9 months</p>
+            <p class="text-gray-700 text-sm mb-4">
+              Paw is energetic and curious, always ready for a new adventure. He
+              loves playing fetch and making new friends!
+            </p>
+            <div class="flex items-center justify-center gap-5 mb-1">
+              <button
+                class="bg-[#98690C] text-white px-5 py-2 rounded-full hover:bg-[#8b5e3c] transition mt-auto"
+              >
+                <a href="adopt.html">Adopt</a>
+              </button>
+              <!-- <button
+                class="bg-[#F59E42] text-white px-5 py-2 rounded-full hover:bg-[#F97316] transition mt-auto"
+              >
+                <a href="apply.html">Donate</a>
+              </button> -->
+            </div>
+          </div>
+        </div>
+        <!-- Dog Card 6 -->
+        <div
+          class="relative flex flex-col bg-white/70 backdrop-blur-md rounded-2xl shadow-lg p-6 max-w-[320px] min-h-[300px]"
+        >
+          <button class="absolute top-4 right-4 group">
+            <svg
+              class="w-7 h-7 text-gray-300 group-hover:text-red-400 transition-colors"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+              />
+            </svg>
+          </button>
+          <img
+            src="src/image/lilyy.png"
+            alt="Lily"
+            class="w-32 h-32 object-cover rounded-xl border-4 border-white shadow-lg mx-auto mb-4"
+          />
+          <div class="flex-1 flex flex-col items-center text-center">
+            <div class="flex items-center justify-center gap-2 mb-1">
+              <h3 class="text-2xl font-bold text-[#98690C]">Lily</h3>
+              <svg
+                class="w-5 h-5 text-pink-500"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <circle cx="12" cy="8" r="5" />
+                <line x1="12" y1="13" x2="12" y2="21" />
+                <line x1="9" y1="18" x2="15" y2="18" />
+              </svg>
+            </div>
+            <p class="text-[#818B51] text-base mb-1">Shih Tzu • 1 year</p>
+            <p class="text-gray-700 text-sm mb-4">
+              Lily is gentle and sweet, perfect for a calm home. She enjoys
+              cuddles and quiet afternoons by your side.
+            </p>
+            <div class="flex items-center justify-center gap-5 mb-1">
+              <button
+                class="bg-[#98690C] text-white px-5 py-2 rounded-full hover:bg-[#8b5e3c] transition mt-auto"
+              >
+                <a href="adopt.html">Adopt</a>
+              </button>
+              <!-- <button
+                class="bg-[#F59E42] text-white px-5 py-2 rounded-full hover:bg-[#F97316] transition mt-auto"
+              >
+                <a href="apply.html">Donate</a>
+              </button> -->
+            </div>
+          </div>
+        </div>
+      </div>
 
-</body>
+      <div class="flex justify-center space-x-2 pt-15 pb-7">
+        <button class="px-3 py-1 border rounded hover:bg-gray-100">&lt;</button>
+        <button class="px-3 py-1 border rounded bg-yellow-400 text-white">
+          1
+        </button>
+        <button class="px-3 py-1 border rounded">2</button>
+        <button class="px-3 py-1 border rounded">3</button>
+        <button class="px-3 py-1 border rounded">...</button>
+        <button class="px-3 py-1 border rounded">5</button>
+        <button class="px-3 py-1 border rounded hover:bg-gray-100">&gt;</button>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="bg-[#FFF6E3] text-[#333] py-10 shadow-md text-sm">
+      <div
+        class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-10"
+      >
+        <!-- 1. Logo + Description -->
+        <div>
+          <div class="flex items-center gap-2 mb-4">
+            <img src="src/image/logo.png" alt="Logo" class="w-10 h-10" />
+            <span class="text-2xl font-semibold text-[#98690C]"
+              >Tailwaggers</span
+            >
+          </div>
+          <p class="text-sm">
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+          </p>
+        </div>
+
+        <!-- 2. Explore Links -->
+        <div>
+          <h3 class="text-base font-semibold mb-4">Explore</h3>
+          <ul class="space-y-3 text-sm">
+            <li><a href="about.html" class="hover:underline">About Us</a></li>
+            <li><a href="#" class="hover:underline">Adopt</a></li>
+            <li><a href="#" class="hover:underline">Blog</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-base font-semibold mb-3">Contact Us</h3>
+          <p class="mb-1">20 Bangkok, Thailand</p>
+          <p class="mb-1">+ (66 789 454 564)</p>
+          <p class="mb-3">info@example.com</p>
+
+          <div class="flex gap-4">
+            <a href="#"
+              ><img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/twitter/twitter-original.svg"
+                alt="Twitter"
+                class="w-5 h-5"
+            /></a>
+            <a href="#"
+              ><img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg"
+                alt="Facebook"
+                class="w-5 h-5"
+            /></a>
+            <a href="#"
+              ><img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"
+                alt="LinkedIn"
+                class="w-5 h-5"
+            /></a>
+            <a href="#"
+              ><img
+                src="src/image/instagram.png"
+                alt="Instagram"
+                class="w-5 h-5"
+            /></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div
+        class="border-t border-[#e2d8bc] mt-10 pt-4 text-center text-sm text-[#333]"
+      >
+        Copyright © WPDeveloper. All rights reserved.
+      </div>
+    </footer>
+  </body>
 </html>
